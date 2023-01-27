@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <h1>Tic-Tac-Toe Game</h1>
+    <button class="open">Start a new game</button>
+    <div class="player-names">
+        <div class="first-player"></div>
+        <div class="second-player"></div>
+    </div>
+    <div class="form-popup">
+        <form>
+            <h2>Please, enter your names</h2>
+            <div class="first-player">
+                <label for="name-one">First player: </label>
+                <input type="text" id="name-one" name="name-one" required>
+            </div>
+            <div class="second-player">
+                <label for="name-two">Second player: </label>
+                <input type="text" id="name-two" name="name-two" required>
+            </div>
+            <button class="start">Start</button>
+            <button class="cancel" type="button">Cancel</button>
+        </form>
+    </div>
+
+    <div class=" board">
+        <div class="cell" id="c0"></div>
+        <div class="cell" id="c1"></div>
+        <div class="cell" id="c2"></div>
+        <div class="cell" id="c3"></div>
+        <div class="cell" id="c4"></div>
+        <div class="cell" id="c5"></div>
+        <div class="cell" id="c6"></div>
+        <div class="cell" id="c7"></div>
+        <div class="cell" id="c8"></div>
+    </div>
+    <div class="backup"></div>
+    <div class="announcement"></div>
+    <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+.form-popup {
+    border: 2px solid red;
+    background-color: antiquewhite;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+    border: 1px solid black;
+    height: 100px;
+}
+
+.x {
+    background-color: pink;
+}
+
+.o {
+    background-color: lightblue;
+}
