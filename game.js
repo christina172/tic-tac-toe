@@ -55,7 +55,7 @@ function play(e) {
 
         function game(item) {
             item.addEventListener("click", () => {
-                if (item.textContent !== "x" && item.textContent !== "0" && announcement.textContent === "") {
+                if (item.textContent !== "x" && item.textContent !== "o" && announcement.textContent === "") {
                     if (playerOne.score === playerTwo.score) {
                         item.classList.add("x");
                         item.textContent = "x";
@@ -63,21 +63,23 @@ function play(e) {
                         console.log("playerOne.score ", playerOne.score);
                     } else {
                         item.classList.add("o");
-                        item.textContent = "0";
+                        item.textContent = "o";
                         playerTwo.score++;
                         console.log("playerTwo.score ", playerTwo.score);
                     }
                     for (let k = 0; k < Gameboard.lines.length; k++) {
                         if (Gameboard.lines[k][0].textContent === "x" && Gameboard.lines[k][1].textContent === "x" && Gameboard.lines[k][2].textContent === "x") {
                             backup.textContent = "First player won";
+                            backup.classList.add("first-player");
                             announcement.textContent = `Congratulations, ${document.getElementById("name-one").value}! You won. Don't worry ${document.getElementById("name-two").value}, you'll win next time!`;
                             playerOne.score = 0;
                             playerTwo.score = 0;
                             document.querySelector("form").reset();
 
                         };
-                        if (Gameboard.lines[k][0].textContent === "0" && Gameboard.lines[k][1].textContent === "0" && Gameboard.lines[k][2].textContent === "0") {
+                        if (Gameboard.lines[k][0].textContent === "o" && Gameboard.lines[k][1].textContent === "o" && Gameboard.lines[k][2].textContent === "o") {
                             backup.textContent = "Second player won";
+                            backup.classList.add("second-player");
                             announcement.textContent = `Congratulations, ${document.getElementById("name-two").value}! You won. Don't worry ${document.getElementById("name-one").value}, you'll win next time!`;
                             playerOne.score = 0;
                             playerTwo.score = 0;
@@ -85,7 +87,7 @@ function play(e) {
                         }
                     }
                     if (playerOne.score === 5 && playerTwo.score === 4) {
-                        announcement.textContent = "It's a tie!";
+                        backup.textContent = "It's a tie!";
                         playerOne.score = 0;
                         playerTwo.score = 0;
                         document.querySelector("form").reset();
